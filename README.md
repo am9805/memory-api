@@ -92,8 +92,9 @@ Enlace para [simular](http://www.pythontutor.com/c.html#code=%23define%20NULL%20
    >Ocurre un error de ```segmentation fault (core dumped)```
 
 2. Compile el programa del ejercicio anterior usando información de simbolos (con la flag -g). Al hacer esto se esta poniendo mas informacion en el ejecutable para permitir al debugger acceder a informacion util sobre los nombres de las variables y cosas similares. Ejecute el programa bajo el debugger digitando en consola (para el caso) ```gdb null``` y entonces una vez el ```gdb``` este corriendo ejecute ```run```. ¿Qué muestra gdb?
-    > GDB nos imprime lo siguiente: ```Program received signal SIGSEGV, Segmentation fault.  0x000055555555465e in main () at null.c:6```
+    >GDB nos imprime lo siguiente: ```Program received signal SIGSEGV, Segmentation fault.  0x000055555555465e in main () at null.c:6```
 3. Haga uso de la herramienta ```valgrind``` en el programa empleado en los puntos anteriores. Se usará la herramienta ```memcheck``` que es parte de ```valgrind``` para analizar lo que pasa: ```valgrind --leak-check=yes null```. ¿Qué pasa cuando corre esto?, ¿Puede usted interpretar la salida de la herramienta anterior?
+    >Cuando se corre este programa ```valgrind``` trata de ejecutar el programa para detección de fugas de memoria, sin embargo se encuentra con el error que el GDB y el mismo sistema operativo ya nos había advertido, acerca de que hubo un ```segmentation fault```; sin embargo, ```valgrind``` nos advierte, con una salida mas interpretable, el qué se trató de realizar para que el error ocurriera y sus posibles causas. Finalmente nos advierte del tamaño total de memoria usado y si al final hubo fugas de memoria o si todo se pudo liberar y poner a disposición de otros procesos.
 
 4. Escriba un programa sencillo que asigne memoria usando ```malloc()``` pero olvide liberarla antes de que el programa termina. ¿Qué pasa cuando este programa se ejecuta?, ¿Puede usted usar gdb para encontrar problemas como este?, ¿Que dice acerca de Valgrind (de nuevo use este con la bandera ```--leak check=yes```)?
 
