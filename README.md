@@ -103,7 +103,7 @@ Enlace para [simular](http://www.pythontutor.com/c.html#code=%23define%20NULL%20
     >Cuando este programa se ejecuta no indica ningún tipo de error, sin embargo, cuando se ejecuta usando ```valgrind```, de inmediato nos muestra que hubo un fallo en la escritura de ```data``` en la posición 100, además de que no se liberó la memoria solicitada, lo cual hace que contemos con 2 errores en nuestro programa.
 
 6. Codifique un programa que asigne un array de enteros (como arriba), luego lo libere, y entonces intente imprimir el valor de un elemento del array. ¿El programa corre?, ¿Que pasa cuando hace uso de ```valgrind```?
-    >El programa ejecuta sin errores, sin embargo, al correrlo en ```valgrind``` nos indica que se trató de hacer uso de un espacio de memoria liberada, lo cuál hace que no sea posible hacer uso de la memoria como se pretende. No obstante al final nos indica que no hay fugas de memoria.
+    >El programa ejecuta sin errores, imprimiendo un valor de 0, sin embargo, al correrlo en ```valgrind``` nos indica que se trató de hacer uso de un espacio de memoria liberada, lo cuál hace que no sea posible confiar de la memoria leída como se pretende. No obstante al final nos indica que no hay fugas de memoria.
 
 7. Ahora pase un **funny value** para liberar (e.g. un puntero en la mitad del array que usted ha asignado) ¿Qué pasa?, ¿Ústed necesita herramientas para encontrar este tipo de problemas?
 

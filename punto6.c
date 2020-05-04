@@ -5,6 +5,6 @@
 int main() {
     int *data = malloc(100 * sizeof(int));
     free(data);
-    data[99] = 99;
+    printf("%d", data[99]);
     return 0;
 }
