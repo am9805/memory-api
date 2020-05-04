@@ -19,6 +19,10 @@ int main() {
         scanf(" %c", &newChar);
         text[textSize - 1] = newChar;
     }
+    text = (char *) realloc(text, textSize + 1);
+    ++textSize;
+    text[textSize - 1] = '\0';
     printf("Texto junto ingresado: %s\n", text);
+    free(text);
     return 0;
 }
