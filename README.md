@@ -1,5 +1,8 @@
 # Memory API # 
 
+### Integrantes
+> Alejandro Castaño Rojas y Angélica Arroyave Mendoza
+
 En este laboratorio ganará algún grado de familiaridad con la asignación de memoria (memory allocation). Para el caso, usted escribirá algunos programas con bugs. Luego, usará algunas herramientas para localizar los bugs que usted ha insertado. De este modo se familiarizará con algunas de estas herramientas para un uso futuro. Estas herramientas son: el debuger (**gdb**) y el memory-bug detector (**valgrind**).
 
 ## Actividades previas ##
