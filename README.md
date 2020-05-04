@@ -109,8 +109,10 @@ Enlace para [simular](http://www.pythontutor.com/c.html#code=%23define%20NULL%20
     >El código tiene una ejecución initerrumpida, sin embargo, no es el resultado esperado, se necesita una herramienta de ```debug``` para obtener mayores respuestas acerca del por qué no se comporta como se espera.
 
 8. Intente usar alguna de las otras interfaces para asignacion de memoria. Por ejemplo, cree una estructura de datos simple similar a un vector y que use rutinas que usen realloc para manejar el vector. Use un array para almacenar los elementos del vector; cuando un usuario agregue una entrada al vector, use realloc para asignar un espacio mas a este. ¿Que tan bien funciona el vector asi?, ¿Como se compara con una lista enlazada?, utilice ```valgrind``` para ayudarse en la busqueda de errores.
+    >El vector en ejecución parece comportarse muy bien, el único limitante que tiene es la memoria asignable disponible. Suponemos que la similitud con la lista enlazada es que cuando desea asignar más espacio con la instrucción ```realloc()``` no mueve toda la memoria que ya había sido asignada previamente, sino que, por el contrario, lo que hace es generar un enlace con otra dirección disponible en todo el espacio de direccionamiento. ```valgrind``` no detecta errores en el código realizado. Aparentemente es un código bien hecho a los ojos de ```valgrind``` ya que no tiene fugas de memoria.
 
 9.  Gaste mas tiempo y lea sobre el uso de gdb y valgrind. Conocer estas herramientas es crítico; gaste el tiempo y aprenda como volverse un experto debugger en UNIX y C enviroment.
+    >Por supuesto. Para poder lidiar con errores en futuros desarrollos sin tener que recurrir a solo pruebas de escritorio en papel.
 
 
 ### Valgrind ###
