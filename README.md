@@ -97,6 +97,7 @@ Enlace para [simular](http://www.pythontutor.com/c.html#code=%23define%20NULL%20
     >Cuando se corre este programa ```valgrind``` trata de ejecutar el programa para detección de fugas de memoria, sin embargo se encuentra con el error que el GDB y el mismo sistema operativo ya nos había advertido, acerca de que hubo un ```segmentation fault```; sin embargo, ```valgrind``` nos advierte, con una salida mas interpretable, el qué se trató de realizar para que el error ocurriera y sus posibles causas. Finalmente nos advierte del tamaño total de memoria usado y si al final hubo fugas de memoria o si todo se pudo liberar y poner a disposición de otros procesos.
 
 4. Escriba un programa sencillo que asigne memoria usando ```malloc()``` pero olvide liberarla antes de que el programa termina. ¿Qué pasa cuando este programa se ejecuta?, ¿Puede usted usar gdb para encontrar problemas como este?, ¿Que dice acerca de Valgrind (de nuevo use este con la bandera ```--leak check=yes```)?
+    >Este programa finaliza su ejecución sin error aparente de ejecución, no obstante, el ```valgrind``` es capaz de detectar una fuga de memoria y nos brinda un resumen en el que nos dice que definitivamente se perdió un número de _bytes_ equivalente al que estamos reservando para nuestros propósitos.
 
 5. Escriba un programa que cree un array de enteros llamado data de un tamaño de 100 usando ```malloc```; entonces, lleve el ```data[100]``` a ```0```. ¿Qué pasa cuando este programa se ejecuta?, ¿Qué pasa cuando se corre el programa usando ```valgrind```?, ¿El programa es correcto?
 
