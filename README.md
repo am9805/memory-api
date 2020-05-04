@@ -106,6 +106,7 @@ Enlace para [simular](http://www.pythontutor.com/c.html#code=%23define%20NULL%20
     >El programa ejecuta sin errores, imprimiendo un valor de 0, sin embargo, al correrlo en ```valgrind``` nos indica que se trató de hacer uso de un espacio de memoria liberada, lo cuál hace que no sea posible confiar de la memoria leída como se pretende. No obstante al final nos indica que no hay fugas de memoria.
 
 7. Ahora pase un **funny value** para liberar (e.g. un puntero en la mitad del array que usted ha asignado) ¿Qué pasa?, ¿Ústed necesita herramientas para encontrar este tipo de problemas?
+    >El código tiene una ejecución initerrumpida, sin embargo, no es el resultado esperado, se necesita una herramienta de ```debug``` para obtener mayores respuestas acerca del por qué no se comporta como se espera.
 
 8. Intente usar alguna de las otras interfaces para asignacion de memoria. Por ejemplo, cree una estructura de datos simple similar a un vector y que use rutinas que usen realloc para manejar el vector. Use un array para almacenar los elementos del vector; cuando un usuario agregue una entrada al vector, use realloc para asignar un espacio mas a este. ¿Que tan bien funciona el vector asi?, ¿Como se compara con una lista enlazada?, utilice ```valgrind``` para ayudarse en la busqueda de errores.
 
